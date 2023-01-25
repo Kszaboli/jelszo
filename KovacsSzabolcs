@@ -1,0 +1,71 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp17
+{
+    class Program
+    {
+        static bool Szamjegy(string jsz)
+        {
+            bool s = false;
+            string chs = "0123456789";
+
+            int i = 0;
+            while ((! s)&&(i < chs.Length))
+            {
+                if (jsz.IndexOf(chs[i])>=0)
+                {
+                    s = true;
+                }
+                i++;
+            }
+            return (s);
+        }
+        static bool kisb(string jsz)
+        {
+            bool s = false;
+            string chs = "abcdefghijklmnopqrstuvwxyz";
+
+            int i = 0;
+            while ((!s) && (i < chs.Length))
+            {
+                if (jsz.IndexOf(chs[i]) >= 0)
+                {
+                    s = true;
+                }
+                i++;
+            }
+            return (s);
+        }
+        static bool Nagyb(string jsz)
+        {
+            bool s = false;
+            string chs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            int i = 0;
+            while ((!s) && (i < chs.Length))
+            {
+                if (jsz.IndexOf(chs[i]) >= 0)
+                {
+                    s = true;
+                }
+                i++;
+            }
+            return (s);
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("A jelszó: ");
+            string jelszo = Console.ReadLine();
+
+            Console.WriteLine("Van-e számjegy:{0}, van-e nagybetű:{1}, van-e kisbetű:{2}.", Szamjegy(jelszo), Nagyb(jelszo), kisb(jelszo));
+
+            int hossz = jelszo.Length;
+
+            Console.ReadKey();
+        }
+    }
+}
